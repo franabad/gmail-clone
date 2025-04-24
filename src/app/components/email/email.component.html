@@ -1,0 +1,29 @@
+<div class="row-wrapper" cdkDrag [cdkDragData]="email" (cdkDragStarted)="onDragStarted()"
+  (cdkDragEnded)="onDragEnded()">
+  <div *cdkDragPlaceholder></div>
+  <div *cdkDragPreview>
+    <div style="width: 100px; height: 100px; background-color: blue;"></div>
+  </div>
+  <div class="email-header">
+    <label class="custom-checkbox">
+      <input type="checkbox" [checked]="email.selected" />
+      <span class="checkmark">
+        @if (email.selected) {
+        <mat-icon class="check-icon">done</mat-icon>
+        }
+      </span>
+    </label>
+    <mat-icon class="material-icons tab-icons">star</mat-icon>
+  </div>
+  <div>
+    {{email.from}}
+  </div>
+  <div class="email-content">
+    <p class="email-subject">{{email.subject}}</p>
+    <!-- <pre>-</pre> -->
+    <p class="email-body"> {{email.body}}</p>
+  </div>
+  <div>
+    {{email.date | date: 'short'}}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.list-icon,
+.list-icon-not-active {
+  font-size: 21px;
+  align-items: center;
+  display: flex;
+}
+
+.list-icon-not-active {
+  color: #444746;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}

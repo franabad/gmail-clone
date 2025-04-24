@@ -1,0 +1,5 @@
+<div class="emails-container" cdkDropList [cdkDropListData]="emails" cdkDropListSortingDisabled>
+  @for (email of emails; track email.id) {
+  <app-email [email]="email"></app-email>
+  }
+</div>

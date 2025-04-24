@@ -1,0 +1,134 @@
+section {
+  height: calc(100vh - 65px);
+  width: calc(100vw - 312px);
+  border-radius: 16px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 14px 24px 0px 20px;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.select-all-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  height: 14px;
+  width: 14px;
+
+  input {
+    display: none;
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #333;
+  border-radius: 2px;
+}
+
+input:checked+.checkmark {
+  border: 2px solid #333;
+}
+
+.checkmark .check-icon {
+  display: none;
+  position: absolute;
+  color: #333;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+input:checked+.checkmark .check-icon {
+  display: block;
+}
+
+.emails-icons {
+  color: #333;
+  font-weight: 500;
+  font-size: 19px;
+  align-items: center;
+  display: flex;
+}
+
+.pagination-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(94, 94, 94);
+}
+
+.pagination-icons {
+  color: #b8b8b8;
+  font-size: 18px;
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+}
+
+.tab-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #E2E5E7;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 12px;
+  border: 0px;
+  padding: 17px 0px 12px 18px;
+  width: 255px;
+  background-color: transparent;
+  color: rgb(94, 94, 94);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 5px;
+
+  &:hover {
+    background-color: #F4F4F4;
+  }
+
+  &.active {
+    color: #1a73e8;
+    border-bottom: 3px solid #1a73e8;
+  }
+}
+
+.tab-icon {
+  font-size: 18px;
+  align-items: center;
+  display: flex;
+}
+
+.emails-container {
+  width: 100%;
+  padding: 0px 0px 0px 18px;
+}

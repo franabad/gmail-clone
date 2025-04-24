@@ -1,0 +1,89 @@
+.email-header {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  height: 14px;
+  width: 14px;
+
+  input {
+    display: none;
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #333;
+  border-radius: 2px;
+}
+
+input:checked+.checkmark {
+  border: 2px solid #333;
+}
+
+.checkmark .check-icon {
+  display: none;
+  position: absolute;
+  color: #333;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+input:checked+.checkmark .check-icon {
+  display: block;
+}
+
+.email-content {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.email-subject {
+  width: auto;
+  white-space: nowrap;
+}
+
+.email-body {
+  font-weight: 400;
+  color: #5f6368;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 20px;
+}
+
+
+.row-wrapper {
+  display: grid;
+  grid-template-columns: auto 0.40fr 2fr auto; // checkbox | from | subject | date
+  align-items: center;
+  width: 100%;
+  height: 39px;
+  justify-items: start;
+  color: #202124;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #E9EBEC;
+  padding: 0px 12px 0px 18px;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  }
+}

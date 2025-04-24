@@ -1,0 +1,42 @@
+<section cdkDropListGroup>
+  <header>
+    <div>
+      <div class="select-all-container">
+        <label class="custom-checkbox">
+          <input type="checkbox" (change)="selectAllEmails($event)" [checked]="allSelected" />
+          <span class="checkmark">
+            @if (allSelected) {
+            <mat-icon class="check-icon">done</mat-icon>
+            }
+          </span>
+        </label>
+        <mat-icon class="material-icons emails-icons">arrow_drop_down</mat-icon>
+      </div>
+      @if (anyEmailSelected) {
+      <mat-icon class="material-icons emails-icons">chevron_left</mat-icon>
+      <mat-icon class="material-icons emails-icons">chevron_right</mat-icon>
+      } @else {
+      <mat-icon class="material-icons emails-icons">refresh</mat-icon>
+      <mat-icon class="material-icons emails-icons">more_vert</mat-icon>
+      }
+    </div>
+    <div class="pagination-container">
+      <span class="pagination-text">
+        1-42 of {{emailsByTab.length}}
+      </span>
+      <mat-icon class="material-icons pagination-icons">chevron_left</mat-icon>
+      <mat-icon class="material-icons pagination-icons">chevron_right</mat-icon>
+    </div>
+  </header>
+  <div class="tab-container">
+    @for (tab of tabs; track tab.label) {
+    <button cdkDropList [cdkDropListData]="tab.label" (cdkDropListDropped)="onEmailDropped($event)" class="tab-button"
+      [ngClass]="{'active': selectedTab === tab.label}" (click)="selectTab(tab.label)">
+      <mat-icon
+        [ngClass]="(selectedTab === tab.label ? 'material-icons tab-icon' : 'material-icons-outlined tab-icon')">{{tab.icon}}</mat-icon>
+      <span>{{tab.label}}</span>
+    </button>
+    }
+  </div>
+  <app-email-list [emails]="emailsByTab"></app-email-list>
+</section>

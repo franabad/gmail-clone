@@ -1,0 +1,145 @@
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 65px;
+  flex-direction: row;
+  background-color: #F8FAFD;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.topnav__left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.menu-icon {
+  display: flex;
+  color: #5F6368;
+  height: 48px;
+  width: 48px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #D7DDE4;
+    border-radius: 50%;
+  }
+}
+
+.img-logo {
+  margin-left: 11px;
+  cursor: pointer;
+}
+
+.topnav__search {
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+input {
+  width: 716px;
+  height: 48px;
+  padding-left: 50px;
+  border-radius: 32px;
+  background-color: #E9EEF6;
+  border: 0px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 83px;
+
+  &:focus {
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: #9b9b9b 1px 1px 3px 0px;
+  }
+}
+
+.search-button,
+.filters-button {
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 35px; // Ajusta este valor para el tamaño del círculo visual
+    height: 35px;
+    border-radius: 999px;
+    background-color: transparent;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    background-color: #D7DDE4;
+  }
+
+  lucide-angular {
+    position: relative;
+    z-index: 1; // asegura que el icono esté encima del hover
+    width: 20px;
+    height: 20px;
+    color: #444746;
+  }
+}
+
+.search-button {
+  left: 84px;
+}
+
+.filters-button {
+  right: 1px;
+}
+
+.search-icon,
+.filters-icon {
+  color: #444746;
+}
+
+.topnav__menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 22px;
+}
+
+.help-icon,
+.settings-icon,
+.grip-icon {
+  background-color: transparent;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  color: #333;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 42px; // Ajusta este valor para el tamaño del círculo visual
+    height: 42px;
+    border-radius: 999px;
+    background-color: transparent;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    background-color: #EAEBEE;
+  }
+}

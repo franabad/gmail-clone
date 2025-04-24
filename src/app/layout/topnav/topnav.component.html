@@ -1,0 +1,23 @@
+<nav class="topnav">
+  <div class="topnav__left">
+    <lucide-angular [img]="menuIcon" class="menu-icon" [size]="24"></lucide-angular>
+    <img [routerLink]="'/'" class="img-logo"
+      src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" />
+    <div class="topnav__search">
+      <input type="search" placeholder="Search mail" />
+      <button class="search-button">
+        <lucide-angular [img]="searchIcon" class="search-icon" [size]="20" [strokeWidth]="2"></lucide-angular>
+      </button>
+      <button class="filters-button">
+        <lucide-angular [img]="filterIcon" class="filters-icon" [size]="20" [strokeWidth]="2"></lucide-angular>
+      </button>
+    </div>
+  </div>
+  <div class="topnav__menu">
+    <lucide-angular [img]="helpIcon" class="help-icon" [size]="22"></lucide-angular>
+    <lucide-angular [img]="settingsIcon" class="settings-icon" [size]="22"></lucide-angular>
+    <img src="assets/icons/gemini.svg" class="gemini-icon" />
+    <lucide-angular [img]="gripIcon" class="grip-icon" [size]="22"></lucide-angular>
+    <p>Profile</p>
+  </div>
+</nav>
