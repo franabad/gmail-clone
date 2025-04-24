@@ -11,7 +11,7 @@ import { CdkDrag, CdkDragDrop, CdkDropList, CdkDropListGroup } from '@angular/cd
 
 @Component({
   selector: 'app-emails',
-  imports: [CommonModule, MatIconModule, EmailListComponent, CdkDropListGroup, CdkDropList],
+  imports: [CommonModule, MatIconModule, EmailListComponent],
   templateUrl: './emails.component.html',
   styleUrl: './emails.component.scss'
 })
@@ -59,11 +59,19 @@ export class EmailsComponent {
     this.allSelected = checked
   }
 
-  onEmailDropped(event: CdkDragDrop<any>) {
-    const email = event.item.data as Email;
-    const tab = event.container.data as Email['tab'];
-    this.emails = this.emails.map(e =>
-      e.id === email.id ? { ...e, tab: tab } : e
-    );
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent, tab: { label: string, icon: string }) {
+    event.preventDefault();
+    console.log('Drop event', tab);
+    const data = event.dataTransfer?.getData('application/json');
+    if (data) {
+      const item = JSON.parse(data);
+      this.emails = this.emails.map(email =>
+        email.id === item.id ? { ...email, tab: tab.label as Email['tab'] } : email
+      )
+    }
   }
 }

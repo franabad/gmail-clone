@@ -1,4 +1,4 @@
-<section cdkDropListGroup>
+<section>
   <header>
     <div>
       <div class="select-all-container">
@@ -30,7 +30,7 @@
   </header>
   <div class="tab-container">
     @for (tab of tabs; track tab.label) {
-    <button cdkDropList [cdkDropListData]="tab.label" (cdkDropListDropped)="onEmailDropped($event)" class="tab-button"
+    <button (dragover)="onDragOver($event)" (drop)="onDrop($event, tab)" class="tab-button"
       [ngClass]="{'active': selectedTab === tab.label}" (click)="selectTab(tab.label)">
       <mat-icon
         [ngClass]="(selectedTab === tab.label ? 'material-icons tab-icon' : 'material-icons-outlined tab-icon')">{{tab.icon}}</mat-icon>

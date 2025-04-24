@@ -1,9 +1,4 @@
-<div class="row-wrapper" cdkDrag [cdkDragData]="email" (cdkDragStarted)="onDragStarted()"
-  (cdkDragEnded)="onDragEnded()">
-  <div *cdkDragPlaceholder></div>
-  <div *cdkDragPreview>
-    <div style="width: 100px; height: 100px; background-color: blue;"></div>
-  </div>
+<div class="row-wrapper" draggable="true" (dragstart)="onDragStart($event, email)">
   <div class="email-header">
     <label class="custom-checkbox">
       <input type="checkbox" [checked]="email.selected" />

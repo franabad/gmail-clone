@@ -87,3 +87,8 @@ input:checked+.checkmark .check-icon {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   }
 }
+
+.row-wrapper:active {
+  background-color: #0e8ccb;
+  cursor: pointer;
+}
