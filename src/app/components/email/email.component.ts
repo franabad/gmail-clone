@@ -1,31 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, Output, ViewChild } from '@angular/core';
 import { Email } from '../../models/emails.model';
 import { MatIconModule } from '@angular/material/icon';
-import { CdkDrag, CdkDragPlaceholder, CdkDragPreview } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragEnd, CdkDragPreview, CdkDragStart } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-email',
-  imports: [CommonModule, MatIconModule, CdkDrag, CdkDragPlaceholder, CdkDragPreview],
+  imports: [CommonModule, MatIconModule, CdkDrag, CdkDragPreview],
   templateUrl: './email.component.html',
   styleUrl: './email.component.scss'
 })
 export class EmailComponent {
   @Input() email!: Email
 
-  isDragging = false;
-
-  @HostBinding('class.dragging') get draggingClass() {
-    return this.isDragging;
+  dragStarted(event: CdkDragStart) {
+    document.body.classList.add('dragging')
   }
 
-  onDragStarted() {
-    this.isDragging = true;
-    console.log('Drag started', this.email);
-  }
+  dragEnded(event: CdkDragEnd) {
+    const email = event.source.element.nativeElement
 
-  onDragEnded() {
-    this.isDragging = false;
-    console.log('Drag ended', this.email);
+    email.removeAttribute('style')
+    document.body.classList.remove('dragging')
   }
 }

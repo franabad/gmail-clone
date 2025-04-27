@@ -1,8 +1,11 @@
-<div class="row-wrapper" cdkDrag [cdkDragData]="email" (cdkDragStarted)="onDragStarted()"
-  (cdkDragEnded)="onDragEnded()">
-  <div *cdkDragPlaceholder></div>
+<div id="email" class="row-wrapper" cdkDrag [cdkDragData]="email" (cdkDragStarted)="dragStarted($event)"
+  (cdkDragEnded)="dragEnded($event)">
   <div *cdkDragPreview>
-    <div style="width: 100px; height: 100px; background-color: blue;"></div>
+    <div class="custom-preview">
+      <mat-icon class="material-icons-outlined"
+        style="font-size: 20px; align-items: center; display: flex;">email</mat-icon>
+      <span>Move 1 conversation</span>
+    </div>
   </div>
   <div class="email-header">
     <label class="custom-checkbox">

@@ -22,6 +22,11 @@ html {
   box-sizing: border-box;
 }
 
+body.dragging,
+body.dragging * {
+  cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/closedhand.cur) 7 5, move !important;
+}
+
 html,
 body {
   height: 100%;
